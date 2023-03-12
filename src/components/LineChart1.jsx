@@ -1,40 +1,48 @@
-import React from 'react';
+//import React from 'react';
 import { Line } from '@ant-design/charts';
 
 const LineChart1 = () => {
   // Generating some dummy data
   const myData = [
-    { x: 0, y: 0 },
-    { x: 1, y: 2 },
-    { x: 2, y: 4 },
-    { x: 3, y: 11 },
-    { x: 4, y: 9 },
-    { x: 5, y: 14 },
-    { x: 6, y: 19 },
-    { x: 7, y: 17 },
-    { x: 8, y: 22 },
-    { x: 9, y: 24 },
-    { x: 10, y: 23 },
-    { x: 11, y: 27 },
-    { x: 12, y: 32 },
-    { x: 13, y: 30 },
-    { x: 14, y: 35 },
-    { x: 15, y: 37 },
-    { x: 16, y: 40 },
+    { x: 0, y: 0,category:'pH' },
+    { x: 1, y: 2,category:'Temp' },
+    { x: 2, y: 4,category:'NH3' },
+    { x: 3, y: 11,category:'DO' },
+    { x: 4, y: 9,category:'pH' },
+    { x: 5, y: 14 ,category:'Temp'},
+    { x: 6, y: 19,category:'NH3' },
+    { x: 7, y: 17,category:'DO' },
+    { x: 8, y: 22,category:'pH' },
+    { x: 9, y: 24,category:'Temp' },
+    { x: 10, y: 23,category:'NH3' },
+    { x: 11, y: 27,category:'DO' },
+    { x: 12, y: 32,category:'pH' },
+    { x: 13, y: 30,category:'Temp' },
+    { x: 14, y: 35,category:'NH3' },
+    { x: 15, y: 37,category:'DO' },
+    { x: 16, y: 40,category:'pH' },
   ];
+
+  
 
   return (
     <>
       <Line
         data={myData}
-        height={500}
+        height={300}
         xField="x"
         yField="y"
-        point={{ size: 5, shape: 'diamon' }}
-        color='blue'
+        seriesField='category'
+        point={{ size: 5, shape: 'diamond' }}
+        color={["blue","green","red","yellow"]}
       />
     </>
+    
   );
+  
 };
 
 export default LineChart1;
+
+
+

@@ -3,73 +3,21 @@ import { Select } from 'antd';
 import LineChart1 from './LineChart1'
 import LineChart2 from './LineChart2'
 import LineChart3 from './LineChart3'
-import { Table } from "antd"; 
-
-
-const dataSource = [
-    {
-      key: '1',
-      Testdate: '12-2-2002',
-      PH: 7,
-      NH3: '0.5',
-      Temp:"26",
-      DO:"8.9"
-    },
-    {
-        key: '2',
-        Testdate: '20-2-2002',
-        PH: 7,
-        NH3: '0.8',
-        Temp:"56",
-        DO:"9.9"
-    },
-    {
-        key: '3',
-        Testdate: '20-5-2002',
-        PH: 9,
-        NH3: '0.2',
-        Temp:"18",
-        DO:"7"
-    },
-  ];
-  
-  const columns = [
-    {
-      title: 'Testdate',
-      dataIndex: 'Testdate',
-      key: 'Testdate',
-    },
-    {
-      title: 'PH',
-      dataIndex: 'PH',
-      key: 'PH',
-    },
-    {
-      title: 'NH3',
-      dataIndex: 'NH3',
-      key: 'NH3',
-    },
-    {
-        title: 'Temp',
-        dataIndex: 'Temp',
-        key: 'Temp',
-      },
-      {
-        title: 'DO',
-        dataIndex: 'DO',
-        key: 'DO',
-      },
-  ];
-
-
-
-
+import TableA from './TableA';
+import TableB from './TableB';
+import TableC from './TableC';
+import {useNavigate} from 'react-router-dom'
 
 
 
 
 function Fish (){
+  const navigate=useNavigate()
+  const handleclick=(value)=>{
+     navigate(`/${value}`)
+  }
     const[pond,setPond] = useState(" ");
+    
 
     const onChange = (value) => {
         console.log(`selected ${value}`);
@@ -123,28 +71,25 @@ function Fish (){
   </div>
  
   <div style={{width:'1450px',height:"800px"}}>
-     <div style={{width:'1450px',height:"400px"}}>
+     <div style={{display:'flex',height:"400px"}}>
+        <div style={{width:"1600px"}}>{pond=="Pond A"?<LineChart1 />:(pond=="Pond B"?<LineChart2 />:(pond=="Pond C"?<LineChart3 />:null))}</div>
+        <div style={{width:"900px",paddingLeft:"100px"}}>
+         <h2>for more details click here</h2>
+         
 
-
-          
-            
-          
-        
-            {pond=="Pond A"?<LineChart1 />:(pond=="Pond B"?<LineChart2 />:(pond=="Pond C"?<LineChart3 />:null))}
-            
-        
-        
+          <div style={{paddingTop:"35px",paddingLeft:"200px",color:"white"}}>
+          <button style={{backgroundColor:"blue",color:"white"}} onClick={handleclick} >show more</button>
+          </div>
+        </div>
      </div>
 
-     <div style={{width:'1450px',height:"400px"}}>
-     <Table dataSource={dataSource} columns={columns} />;
-     </div>
-
+    
+     {pond=="Pond A"?<TableA />:(pond=="Pond B"?<TableB />:(pond=="Pond C"?<TableC />:null))}
 
     </div>
 
 
-  <h1>hii</h1>
+  
   </div>
 )}
 
