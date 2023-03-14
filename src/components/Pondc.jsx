@@ -99,7 +99,7 @@ function Pondc() {
       <TableC />
       </div>
       <div style={{paddingLeft:"600px",paddingTop:"100px"}}>
-      <button onClick={handleclick} style={{backgroundColor:"blue",color:"white"}}>Home</button>
+      <Button onClick={handleclick} style={{backgroundColor:"blue",color:"white"}}>Home</Button>
       <h1>Product details</h1>
   <Card
    

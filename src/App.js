@@ -6,6 +6,7 @@ import LineChart from './components/LineChart1'
 import Ponda from './components/Ponda'
 import Pondb from './components/Pondb'
 import Pondc from './components/Pondc'
+import Show from './components/Show'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/Pond A' element={<Ponda/>}/>
         <Route path='/Pond B' element={<Pondb/>}/>
         <Route path='/Pond C' element={<Pondc/>}/>
+        <Route path='/show' element={<Show/>}/>
 
         
       </Routes>

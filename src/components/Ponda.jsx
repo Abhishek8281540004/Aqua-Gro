@@ -22,7 +22,7 @@ const content = (
   );
   const content4 = (
     <div>
-      <p>Ammnoia is normal </p>
+      <p>Ammnoia is high </p>
     </div>
   );
 
@@ -89,7 +89,7 @@ function Ponda() {
       <TableA />
       </div>
       <div style={{paddingLeft:"600px",paddingTop:"100px"}}>
-      <button onClick={handleclick} style={{backgroundColor:"blue",color:"white"}}>Home</button>
+      <Button onClick={handleclick} style={{backgroundColor:"blue",color:"white"}}>Home</Button>
         <h1>Product details</h1>
   <Card
    

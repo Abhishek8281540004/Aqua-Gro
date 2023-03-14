@@ -11,12 +11,13 @@ import {useNavigate} from 'react-router-dom'
 
 
 
+
 function Fish (){
   const navigate=useNavigate()
   const handleclick=(value)=>{
-     navigate(`/${value}`)
+     navigate('/show')
   }
-    const[pond,setPond] = useState(" ");
+    const[pond,setPond] = useState("Pond A");
     
 
     const onChange = (value) => {
@@ -41,6 +42,7 @@ function Fish (){
     optionFilterProp="children"
     onChange={onChange}
     onSearch={onSearch}
+    defaultValue={pond}
     filterOption={(input, option) =>
       (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
     }

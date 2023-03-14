@@ -13,6 +13,7 @@ function Login() {
 
   return (
     <div>
+      <div style={{paddingLeft:"300px",paddingTop:"250px"}}>
        <Form
     name="basic"
     labelCol={{ span: 8 }}
@@ -49,6 +50,7 @@ function Login() {
       </Button>
     </Form.Item>
   </Form>
+    </div>
     </div>
   )
 }
